@@ -9,57 +9,83 @@ loginBtn.addEventListener("click", function (event) {
      frontPage.style.display = "block";
 })
 
-var inputW=document.getElementById("inpu-withdraw");
-inputW.addEventListener("keypress", function (event) {
-     console.log(event.key)
-})
 
+/* ******************************************************************************************************* */
 //deposit button event handler 
 var depositBtn = document.querySelector('.deposit-btn');
 depositBtn.addEventListener('click', function (event) {
-     var depositInput = document.querySelector('.deposit-input').value;
-     var depositNumber = parseFloat(depositInput);
-     var depositPast = document.querySelector('.total-deposit').innerText;
-     var depositPastNumber = parseFloat(depositPast);
-     var grandTotalDeposit = depositPastNumber + depositNumber;
+    var amountOfDepositNumber = numberMaker('depositAmount');
 
-     document.querySelector('.total-deposit').innerText = grandTotalDeposit;
-     document.querySelector('.deposit-input').value = "";
-//balance card
-     var currentBalance = document.querySelector('.balance').innerText;
-     var currentBalanceNumber = parseFloat(currentBalance);
-     var grandBalance = currentBalanceNumber + grandTotalDeposit;
+     spanTextUpdate('currentDeposit', amountOfDepositNumber);
+    spanTextUpdate('currentBalance', amountOfDepositNumber);
 
-     document.querySelector('.balance').innerText = grandBalance;
+    document.getElementById('depositAmount').value = '0';
 })
-
-//function
-
-
-
-
-
 
 
 
 //withdraw button handler
+var withdrawBtn = document.querySelector('.withdraw-btn');
+withdrawBtn.addEventListener('click', function (event) {
+    var amountOfWithdrawNumber = numberMaker('withdrawAmount');
 
-     var withdrawBtn = document.querySelector(".withdraw-btn");
-      withdrawBtn.addEventListener('click', function (event) {
-     var withdrawInput = document.querySelector('.withdraw-input').value;
-     var withdrawNumber = parseFloat(withdrawInput);
-     var withdrawPast = document.querySelector('.withdraw').innerText;
-     var withdrawPastNumber = parseFloat(withdrawPast);
-     var grandTotalWithdraw = withdrawPastNumber + withdrawNumber;
-           
-           document.querySelector('.withdraw').innerText = grandTotalWithdraw;
-           
-     //balance card
-     var currentBalance = document.querySelector('.balance').innerText;
-     var currentBalanceNumber = parseFloat(currentBalance);
-     var grandBalance = currentBalanceNumber - grandTotalWithdraw;
-     document.querySelector('.balance').innerText = grandBalance;
+    spanTextUpdate('currentWithdraw', amountOfWithdrawNumber);
+    spanTextUpdate('currentBalance', -1 * amountOfWithdrawNumber);
+    
+    document.getElementById('withdrawAmount').value = '0';
+})
 
-     document.querySelector('.withdraw-input').value = "";
 
- })
+
+
+//function
+function spanTextUpdate(id, amountNumber) {
+        var currentBalance = document.getElementById(id).innerText;
+    var currentBalanceNumber = parseFloat(currentBalance);
+    var totalBalance = currentBalanceNumber + amountNumber;
+    document.getElementById(id).innerText = totalBalance;
+    }
+
+function numberMaker(id) {
+     var amount = document.getElementById(id).value;
+    var amountNumber = parseFloat(amount);
+    return amountNumber;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for my better understanding in begging level
+
+//using function
+    // var currentDeposit = document.getElementById('currentDeposit').innerText;
+    // var currentDepositNumber = parseFloat(currentDeposit);
+    // var totalDeposit = currentDepositNumber + amountOfDepositNumber;
+    // document.getElementById('currentDeposit').innerText = totalDeposit;
+
+//balance section=>using function
+    
+    // var currentBalance = document.getElementById("currentBalance").innerText;
+    // var currentBalanceNumber = parseFloat(currentBalance);
+    // var totalBalance = currentBalanceNumber + totalDeposit;
+    // document.getElementById('currentBalance').innerText = totalBalance;

@@ -36,20 +36,21 @@
         </div>
       </div>
     </div>
+    <!-- ********************************************************************* -->
     <section id="frontPage" class="container">
       <div class="frontPage">
         <div class="row1 d-flex justify-content-center">
           <div class="c1 card-small">
             <h6>Deposit</h6>
-            <h1>$ <span class="total-deposit">00</span></h1>
+            <h1>$ <span id="currentDeposit">00</span></h1>
           </div>
           <div class="c2 card-small">
             <h6>Withdraw</h6>
-            <h1>$ <span class="withdraw">00</span></h1>
+            <h1>$ <span id="currentWithdraw">00</span></h1>
           </div>
           <div class="c3 card-small">
             <h6>Balance</h6>
-            <h1>$ <span class="balance">1240</span></h1>
+            <h1>$ <span id="currentBalance">1240</span></h1>
           </div>
         </div>
         <div class="row2 d-flex justify-content-center">
@@ -57,7 +58,8 @@
             <h3>Deposit</h3>
             <input
               type="text"
-              class="deposit-input d-block"
+              id="depositAmount"
+              class="d-block"
               placeholder="$ amount"
             />
             <button class="btn btn-success deposit-btn">Deposit</button>
@@ -66,9 +68,9 @@
             <h3>Withdraw</h3>
             <input
               type="text"
-              class="withdraw-input d-block"
+              class="d-block"
               placeholder="$ amount"
-              id="inpu-withdraw"
+              id="withdrawAmount"
             />
             <button class="btn btn-success withdraw-btn">Withdraw</button>
           </div>
