@@ -1,6 +1,6 @@
 .loginArea {
-    margin-top: 20vh;
-    margin-bottom: 20vh;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
 }
 .loginArea .header {
   margin-bottom: 50px;
@@ -23,7 +23,7 @@
 
 .frontPage {
   display: none;
-  margin-top: 0px ;
+  margin-top: 0px;
 }
 .c1 {
   background-color: #772f1a;
